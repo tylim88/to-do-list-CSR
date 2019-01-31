@@ -1,0 +1,48 @@
+@import 'https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css';
+
+@font-face {
+    font-family: 'HandWritting';
+    src: url('handwriting-draft_free-version.ttf') format('truetype');
+}
+
+.app {
+    padding-top: 2.5vh;
+    text-align: center;
+    background-color: #e9ecef;
+    height: 100vh;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.title {
+    font-family: 'HandWritting';
+}
+
+.buttons-filter {
+    margin-top: 1rem;
+}
+
+.input-group {
+    margin-top: 1rem;
+    width: 33%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.list-group {
+    width: 33%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: left;
+}
+
+.button-delete {
+    position: absolute;
+    left: 100%;
+    transform: translate(-100%);
+}
+.list-item-label {
+    background-color: #fff;
+}
