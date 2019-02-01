@@ -9,12 +9,14 @@ class List extends Component {
             <Subscribe to={[ListContainer]}>
                 {(list) => (
                     <>
-                        {list.state.todo.map(({ text, status }, index) => {
+                        {list.filteredList().map(({ text, done }, index) => {
                             return (
                                 <ListItem
                                     key={index}
+                                    index={index}
                                     text={text}
-                                    status={status}
+                                    done={done}
+                                    list={list}
                                 />
                             )
                         })}
