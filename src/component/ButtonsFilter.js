@@ -40,7 +40,6 @@ class ButtonsFilter extends React.Component {
             <Subscribe to={[ListContainer]}>
                 {(list) => (
                     <ButtonGroup className="buttons-filter">
-                        {console.log('button')}
                         {buttons.map((element, index) => {
                             const {
                                 variant,
