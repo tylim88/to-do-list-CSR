@@ -14,21 +14,20 @@ class Input extends React.Component {
             <Subscribe to={[ListContainer]}>
                 {(list) => (
                     <InputGroup className="mb-3 input-group-customize">
-                        {console.log('input')}
                         <FormControl
                             placeholder="Click Insert or Press Enter to add Item"
                             ref={(ref) => (this.input = ref)}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter') {
+                                    onSubmitText(list)
+                                }
+                            }}
                         />
                         <InputGroup.Append>
                             <Button
                                 variant="warning"
                                 onClick={() => {
                                     onSubmitText(list)
-                                }}
-                                onKeyDown={(e) => {
-                                    if (e.key === 'Enter') {
-                                        onSubmitText(list)
-                                    }
                                 }}
                             >
                                 Insert
