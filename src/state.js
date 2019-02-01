@@ -136,11 +136,18 @@ class ListContainer extends Container {
     clearDone = () => {
         this.setState(
             (state) => {
-                state.todo.forEach((element, index) => {
-                    if (element.done) {
-                        state.todo.splice(index, 1)
+                const done = state.todo.reduce((acc, obj, index) => {
+                    if (obj.done) {
+                        acc.push(index)
                     }
+                    return acc
+                }, [])
+                const indexes = done.reverse()
+
+                indexes.forEach((num) => {
+                    state.todo.splice(num, 1)
                 })
+
                 state.stat = [state.todo.length, state.todo.length, 0]
                 return state
             },
