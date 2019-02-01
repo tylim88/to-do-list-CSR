@@ -5,31 +5,31 @@ class ButtonsFilter extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            button: 'All',
+            active: 'All',
         }
     }
 
     render() {
         const {
-            state: { button },
+            state: { active },
         } = this
 
         const buttons = [
-            { name: 'All', variant: 'outline-primary' },
-            { name: 'Active', variant: 'outline-danger' },
-            { name: 'Done', variant: 'outline-success' },
+            { button: 'All', variant: 'outline-primary' },
+            { button: 'Active', variant: 'outline-danger' },
+            { button: 'Done', variant: 'outline-success' },
         ].map((element, index) => {
-            const { variant, name } = element
+            const { variant, button } = element
             return (
                 <Button
                     key={index}
                     variant={variant}
                     onClick={() => {
-                        this.setState({ button: name })
+                        this.setState({ active: button })
                     }}
-                    active={button === name}
+                    active={active === button}
                 >
-                    {name}
+                    {button}
                 </Button>
             )
         })

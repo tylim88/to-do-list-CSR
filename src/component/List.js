@@ -1,13 +1,26 @@
 import React, { Component } from 'react'
-import { InputGroup } from 'react-bootstrap'
 import ListItem from './ListItem'
+import { Subscribe } from 'unstated'
+import { ListContainer } from '../state'
 
 class List extends Component {
     render() {
         return (
-            <InputGroup className="mb-3">
-                <ListItem />
-            </InputGroup>
+            <Subscribe to={[ListContainer]}>
+                {(list) => (
+                    <>
+                        {list.state.todo.map(({ text, status }, index) => {
+                            return (
+                                <ListItem
+                                    key={index}
+                                    text={text}
+                                    status={status}
+                                />
+                            )
+                        })}
+                    </>
+                )}
+            </Subscribe>
         )
     }
 }
