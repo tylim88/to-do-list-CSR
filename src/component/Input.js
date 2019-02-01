@@ -14,6 +14,7 @@ class Input extends React.Component {
             <Subscribe to={[ListContainer]}>
                 {(list) => (
                     <InputGroup className="mb-3 input-group-customize">
+                        {console.log('input')}
                         <FormControl
                             placeholder="Click Insert or Press Enter to add Item"
                             ref={(ref) => (this.input = ref)}

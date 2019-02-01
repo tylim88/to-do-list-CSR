@@ -72,6 +72,7 @@ class ListItem extends Component {
                     ) : (
                         <>
                             <InputGroup.Prepend>
+                                {console.log('list-item')}
                                 <InputGroup.Text id="basic-addon1">
                                     {index + 1}
                                 </InputGroup.Text>

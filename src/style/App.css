@@ -58,3 +58,22 @@ body {
 .form-control:read-only {
     background-color: #fff !important;
 }
+
+.a-tag {
+    text-decoration: none !important;
+}
+.green-text {
+    color: #28a745;
+}
+.red-text {
+    color: #dc3545;
+}
+
+.blue-text {
+    color: #007bff;
+}
+
+.white-text,
+.a-tag:hover {
+    color: #fff;
+}

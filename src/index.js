@@ -4,10 +4,15 @@ import App from './App'
 import * as serviceWorker from './serviceWorker'
 import { Provider } from 'unstated'
 import { listContainer } from './state'
+import { HashRouter } from 'react-router-dom'
+
+listContainer.restoreData()
 
 ReactDOM.render(
-    <Provider>
-        <App />
+    <Provider inject={[listContainer]}>
+        <HashRouter>
+            <App />
+        </HashRouter>
     </Provider>,
     document.getElementById('root')
 )
