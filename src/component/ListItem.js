@@ -33,6 +33,7 @@ class ListItem extends Component {
         return (
             <>
                 <InputGroup
+                    // container
                     className="mb-1"
                     onMouseEnter={() => {
                         this.setState({ deleteButton: true })
@@ -47,6 +48,7 @@ class ListItem extends Component {
                 >
                     {editMode ? (
                         <Form.Control
+                            // editable input
                             as="input"
                             rows="1"
                             ref={(ref) => {
@@ -64,9 +66,13 @@ class ListItem extends Component {
                                 saveChange(text, input, list, index)
                             }}
                             onChange={(e) =>
+                                // this input value only change with onChange
                                 this.setState({ input: e.target.value })
                             }
-                            value={input}
+                            value={
+                                // this input value only change with onChange
+                                input
+                            }
                             className="list-item"
                         />
                     ) : (
@@ -106,6 +112,7 @@ class ListItem extends Component {
                                 }}
                             /> */}
                             <input
+                                // disabled input, basically a label
                                 disabled
                                 readOnly
                                 type="text"
@@ -118,6 +125,7 @@ class ListItem extends Component {
                             />
                             {deleteButton && (
                                 <Button
+                                    // remove this item
                                     variant="outline-danger"
                                     className="button-delete"
                                     onClick={() => {

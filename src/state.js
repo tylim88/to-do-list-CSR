@@ -7,10 +7,12 @@ class ListContainer extends Container {
         stat: [0, 0, 0],
     }
 
+    // store state in local storage
     storeData = () => {
         localStorage.setItem('toDoList', JSON.stringify(this.state))
     }
 
+    // input add item
     addItem = (text) => {
         this.setState(
             (state) => {
@@ -36,7 +38,7 @@ class ListContainer extends Container {
             }
         )
     }
-
+    // toggle item done/active state
     toggleDone = (text) => {
         this.setState(
             (state) => {
@@ -58,7 +60,7 @@ class ListContainer extends Container {
             }
         )
     }
-
+    // update item text
     updateText = (text, newText, selfIndex) => {
         this.setState(
             (state) => {
@@ -91,11 +93,11 @@ class ListContainer extends Container {
             }
         )
     }
-
+    // update filter mode
     updateFilter = (filter) => {
         this.setState({ filter })
     }
-
+    // get filtered list
     filteredList = () => {
         return this.state.todo.filter(
             (item) => {
@@ -114,7 +116,7 @@ class ListContainer extends Container {
             }
         )
     }
-
+    // delete item
     deleteItem = (text) => {
         this.setState(
             (state) => {
@@ -132,7 +134,7 @@ class ListContainer extends Container {
             }
         )
     }
-
+    // clear done item
     clearDone = () => {
         this.setState(
             (state) => {
@@ -156,7 +158,7 @@ class ListContainer extends Container {
             }
         )
     }
-
+    // restore data in local storage
     restoreData = () => {
         const cache = localStorage.getItem('toDoList')
 

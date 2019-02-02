@@ -16,7 +16,7 @@ class ButtonsFilter extends React.Component {
             state: { active },
         } = this
 
-        const buttons = [
+        const buttonsFilter = [
             {
                 button: 'All',
                 variant: 'outline-primary',
@@ -37,10 +37,14 @@ class ButtonsFilter extends React.Component {
             },
         ]
         return (
+            // subscribe to state change in store
             <Subscribe to={[ListContainer]}>
                 {(list) => (
-                    <ButtonGroup className="buttons-filter">
-                        {buttons.map((element, index) => {
+                    <ButtonGroup
+                        // container for filter buttons and clear done button
+                        className="buttons-filter"
+                    >
+                        {buttonsFilter.map((element, index) => {
                             const {
                                 variant,
                                 button,
@@ -49,6 +53,7 @@ class ButtonsFilter extends React.Component {
                             } = element
                             return (
                                 <Button
+                                    // create All, Active, Done buttons
                                     key={index}
                                     variant={variant}
                                     onClick={() => {
@@ -72,7 +77,9 @@ class ButtonsFilter extends React.Component {
                                 </Button>
                             )
                         })}
+
                         <Button
+                            // this is Clear Done button
                             variant="dark"
                             onClick={() => {
                                 list.clearDone()

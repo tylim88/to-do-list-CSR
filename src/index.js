@@ -6,9 +6,11 @@ import { Provider } from 'unstated'
 import { listContainer } from './state'
 import { HashRouter } from 'react-router-dom'
 
+// hydrate store container with data from local storage
 listContainer.restoreData()
 
 ReactDOM.render(
+    // provider keep store container instances
     <Provider inject={[listContainer]}>
         <HashRouter>
             <App />

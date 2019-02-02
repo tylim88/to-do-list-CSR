@@ -12,6 +12,7 @@ class List extends Component {
                         {list.filteredList().map(({ text, done }, index) => {
                             return (
                                 <ListItem
+                                    // dynamically generate the list items
                                     key={index}
                                     index={index}
                                     text={text}

@@ -12,10 +12,13 @@ class App extends Component {
             <div className="app">
                 <h1 className="title">To Do List</h1>
                 <Route
+                    // the button will be rendered with different props depend on what route
                     exact
                     path="/"
                     render={() => {
+                        //update the filter based on the route
                         listContainer.updateFilter('All')
+
                         return <ButtonsFilter button="All" />
                     }}
                 />
