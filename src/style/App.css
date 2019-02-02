@@ -44,11 +44,6 @@ body {
 
 .list-item-label {
     background-color: #fff;
-    /* word-break: break-all;
-    margin-left: 1px;
-    padding: 15px 15px 200px 60px;
-    /* display: flex; */
-    /* transition: color 0.4s;  */
 }
 
 .list-item-done {
