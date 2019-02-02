@@ -4,18 +4,7 @@ import { Subscribe } from 'unstated'
 import { ListContainer } from '../state'
 import { Link } from 'react-router-dom'
 class ButtonsFilter extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            active: this.props.button,
-        }
-    }
-
     render() {
-        const {
-            state: { active },
-        } = this
-
         const buttonsFilter = [
             {
                 button: 'All',
@@ -56,18 +45,14 @@ class ButtonsFilter extends React.Component {
                                     // create All, Active, Done buttons
                                     key={index}
                                     variant={variant}
-                                    onClick={() => {
-                                        this.setState({ active: button })
-                                        list.updateFilter(button)
-                                    }}
-                                    active={active === button}
+                                    active={list.state.filter === button}
                                     ref={(ref) => (this[button] = ref)}
                                 >
                                     <Link
                                         to={route}
                                         className={
                                             'a-tag ' +
-                                            (active === button
+                                            (list.state.filter === button
                                                 ? 'white-text'
                                                 : textColor)
                                         }
