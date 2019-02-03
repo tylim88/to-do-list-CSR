@@ -1,4 +1,4 @@
-# to-do-list-unstated
+# to-do-list-CSR
 
 A great simple and practical example to show you how Unstated and React Router works.
 
