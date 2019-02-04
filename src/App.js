@@ -19,21 +19,21 @@ class App extends Component {
                         //update the filter based on the route
                         listContainer.updateFilter('All')
 
-                        return <ButtonsFilter button="All" />
+                        return <ButtonsFilter />
                     }}
                 />
                 <Route
                     path="/Active"
                     render={() => {
                         listContainer.updateFilter('Active')
-                        return <ButtonsFilter button="Active" />
+                        return <ButtonsFilter />
                     }}
                 />
                 <Route
                     path="/Done"
                     render={() => {
                         listContainer.updateFilter('Done')
-                        return <ButtonsFilter button="Done" />
+                        return <ButtonsFilter />
                     }}
                 />
                 <Input />
