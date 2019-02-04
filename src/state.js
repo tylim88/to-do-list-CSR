@@ -9,12 +9,12 @@ class ListContainer extends Container {
 
     // store state in local storage
     storeData = () => {
-        localStorage.setItem('toDoList', JSON.stringify(this.state))
+        return localStorage.setItem('toDoList', JSON.stringify(this.state))
     }
 
     // input add item
     addItem = (text) => {
-        this.setState(
+        return this.setState(
             (state) => {
                 if (text.length === 0) {
                     alert('item is empty')
@@ -40,7 +40,7 @@ class ListContainer extends Container {
     }
     // toggle item done/active state
     toggleDone = (text) => {
-        this.setState(
+        return this.setState(
             (state) => {
                 const obj = state.todo.find((obj) => obj.text === text)
                 obj.done = !obj.done
@@ -62,7 +62,7 @@ class ListContainer extends Container {
     }
     // update item text
     updateText = (text, newText, selfIndex) => {
-        this.setState(
+        return this.setState(
             (state) => {
                 if (newText.length === 0) {
                     alert('item is empty')
@@ -95,7 +95,7 @@ class ListContainer extends Container {
     }
     // update filter mode
     updateFilter = (filter) => {
-        this.setState({ filter })
+        return this.setState({ filter })
     }
     // get filtered list
     filteredList = () => {
@@ -118,7 +118,7 @@ class ListContainer extends Container {
     }
     // delete item
     deleteItem = (text) => {
-        this.setState(
+        return this.setState(
             (state) => {
                 state.todo.some((obj, index) => {
                     if (obj.text === text) {
@@ -136,7 +136,7 @@ class ListContainer extends Container {
     }
     // clear done item
     clearDone = () => {
-        this.setState(
+        return this.setState(
             (state) => {
                 const done = state.todo.reduce((acc, obj, index) => {
                     if (obj.done) {
@@ -163,7 +163,7 @@ class ListContainer extends Container {
         const cache = localStorage.getItem('toDoList')
 
         if (cache) {
-            this.setState(JSON.parse(cache))
+            return this.setState(JSON.parse(cache))
         }
     }
 }
