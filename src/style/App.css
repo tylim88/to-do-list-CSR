@@ -25,6 +25,10 @@ body {
     margin-top: 1rem;
 }
 
+.button-filter {
+    padding: 0;
+}
+
 .input-group {
     width: 33%;
     position: relative;
@@ -56,6 +60,7 @@ body {
 
 .a-tag {
     text-decoration: none !important;
+    padding: 6px 12px;
 }
 .green-text {
     color: #28a745;

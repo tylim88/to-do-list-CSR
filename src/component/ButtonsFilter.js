@@ -42,24 +42,25 @@ class ButtonsFilter extends React.Component {
                                 textColor,
                             } = element
                             return (
-                                <Link
-                                    to={route}
-                                    className={
-                                        'a-tag ' +
-                                        (list.state.filter === button
-                                            ? 'white-text'
-                                            : textColor)
-                                    }
+                                <Button
+                                    // create All, Active, Done buttons
+                                    key={index}
+                                    variant={variant}
+                                    active={list.state.filter === button}
+                                    className="button-filter"
                                 >
-                                    <Button
-                                        // create All, Active, Done buttons
-                                        key={index}
-                                        variant={variant}
-                                        active={list.state.filter === button}
+                                    <Link
+                                        to={route}
+                                        className={
+                                            'a-tag ' +
+                                            (list.state.filter === button
+                                                ? 'white-text'
+                                                : textColor)
+                                        }
                                     >
                                         {button + `(${list.state.stat[index]})`}
-                                    </Button>
-                                </Link>
+                                    </Link>
+                                </Button>
                             )
                         })}
 
