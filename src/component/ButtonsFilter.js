@@ -33,6 +33,7 @@ class ButtonsFilter extends React.Component {
                         // container for filter buttons and clear done button
                         className="buttons-filter"
                     >
+                        {console.log('re-rendered')}
                         {buttonsFilter.map((element, index) => {
                             const {
                                 variant,
@@ -41,25 +42,24 @@ class ButtonsFilter extends React.Component {
                                 textColor,
                             } = element
                             return (
-                                <Button
-                                    // create All, Active, Done buttons
-                                    key={index}
-                                    variant={variant}
-                                    active={list.state.filter === button}
-                                    ref={(ref) => (this[button] = ref)}
+                                <Link
+                                    to={route}
+                                    className={
+                                        'a-tag ' +
+                                        (list.state.filter === button
+                                            ? 'white-text'
+                                            : textColor)
+                                    }
                                 >
-                                    <Link
-                                        to={route}
-                                        className={
-                                            'a-tag ' +
-                                            (list.state.filter === button
-                                                ? 'white-text'
-                                                : textColor)
-                                        }
+                                    <Button
+                                        // create All, Active, Done buttons
+                                        key={index}
+                                        variant={variant}
+                                        active={list.state.filter === button}
                                     >
                                         {button + `(${list.state.stat[index]})`}
-                                    </Link>
-                                </Button>
+                                    </Button>
+                                </Link>
                             )
                         })}
 
