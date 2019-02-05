@@ -14,5 +14,5 @@ Router: React Router
 State Management: Unstated  
 Server Framework: Flask
 
-Looking for SSR example?  
+Looking for SSR and Static example?  
 https://github.com/tylim88/to-do-list-SSR (pure js)
