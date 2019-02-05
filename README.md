@@ -15,4 +15,4 @@ State Management: Unstated
 Server Framework: Flask
 
 Looking for SSR example?  
-https://github.com/tylim88/to-do-list-SSR
+https://github.com/tylim88/to-do-list-SSR (pure js)
