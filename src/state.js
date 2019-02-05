@@ -69,8 +69,6 @@ class ListContainer extends Container {
                     return
                 }
                 const duplicate = state.todo.reduce((acc, { text }, index) => {
-                    console.log('text', text)
-                    console.log('acc', acc)
                     if (text === newText) {
                         acc.push(index)
                     }
