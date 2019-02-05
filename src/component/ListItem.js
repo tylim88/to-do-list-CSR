@@ -41,10 +41,6 @@ class ListItem extends Component {
                     onMouseLeave={() => {
                         this.setState({ deleteButton: false })
                     }}
-                    onDoubleClick={() => {
-                        initializeInput(input, text)
-                        this.setState({ editMode: true })
-                    }}
                 >
                     {editMode ? (
                         <Form.Control
@@ -122,6 +118,10 @@ class ListItem extends Component {
                                 }
                                 aria-label="Text input with checkbox"
                                 value={text}
+                                onDoubleClick={() => {
+                                    initializeInput(input, text)
+                                    this.setState({ editMode: true })
+                                }}
                             />
                             {deleteButton && (
                                 <Button
