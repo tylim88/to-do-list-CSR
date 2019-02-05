@@ -1,6 +1,6 @@
 # to-do-list-CSR
 
-A great simple and practical CSR example to show you how Unstated and React Router works.
+A great simple and practical CSR example to show you how React, Unstated and React Router work together.
 
 https://flask.tylim.com/#/
 
