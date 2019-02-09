@@ -33,7 +33,6 @@ class ButtonsFilter extends React.Component {
                         // container for filter buttons and clear done button
                         className="buttons-filter"
                     >
-                        {console.log('re-rendered')}
                         {buttonsFilter.map((element, index) => {
                             const {
                                 variant,
