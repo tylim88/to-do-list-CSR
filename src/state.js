@@ -4,7 +4,7 @@ class ListContainer extends Container {
     state = {
         todo: [],
         filter: 'All',
-        stat: [0, 0, 0],
+        stat: [0, 0, 0], // number of all, active, done
     }
 
     // store state in local storage
